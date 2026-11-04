@@ -43,6 +43,7 @@ def menu_principal():
         case 8:
             anular_ultima_alteracao()
         case 0:
+            os.system('cls' if os.name == 'nt' else 'clear')
             sys.exit()
 
 def menu_gerir_estudios():
@@ -52,7 +53,18 @@ def menu_gerir_estudios():
         "                 INSERT COIN\n"
         "================================================\n"
         "                   ESTUDIOS\n"
-        "================================================\n"))
+        "================================================\n"
+        "-1. Voltar\n"
+        "0. Sair\n"
+        "================================================\n"
+        "Escolha uma opção: "))
+
+    match escolha:
+        case -1:
+            menu_principal()
+        case 0:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            sys.exit()
 
 def menu_gerir_jogos():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -61,7 +73,18 @@ def menu_gerir_jogos():
         "                 INSERT COIN\n"
         "================================================\n"
         "                     JOGOS\n"
-        "================================================\n"))
+        "================================================\n"
+        "-1. Voltar\n"
+        "0. Sair\n"
+        "================================================\n"
+        "Escolha uma opção: "))
+
+    match escolha:
+        case -1:
+            menu_principal()
+        case 0:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            sys.exit()
 
 def menu_gerir_dlcs():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -70,4 +93,15 @@ def menu_gerir_dlcs():
         "                 INSERT COIN\n"
         "================================================\n"
         "                      DLCS\n"
-        "================================================\n"))
+        "================================================\n"
+        "-1. Voltar\n"
+        "0. Sair\n"
+        "================================================\n"
+        "Escolha uma opção: "))
+
+    match escolha:
+        case -1:
+            menu_principal()
+        case 0:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            sys.exit()

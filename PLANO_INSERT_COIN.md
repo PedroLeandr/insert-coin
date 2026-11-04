@@ -44,9 +44,9 @@ O enunciado original refere ficheiros `.csv`, mas **o professor autorizou a util
 
 ### RF01 — Menu principal
 
-- [ ] Menu navegável na linha de comandos.
+- [x] Menu navegável na linha de comandos.
 - [ ] Submenus organizados por funcionalidade.
-- [ ] Opção de voltar atrás e de sair.
+- [x] Opção de voltar atrás e de sair.
 - [ ] Tratamento de opções inválidas.
 
 ### RF02 — Consultar estúdios
