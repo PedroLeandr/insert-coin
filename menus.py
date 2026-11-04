@@ -1,6 +1,7 @@
 # importes internos
 import sys
 import os
+import time
 
 # importes de ficheiros
 import estudios
@@ -9,7 +10,7 @@ import dlcs
 
 def menu_principal():
     os.system('cls' if os.name == 'nt' else 'clear')
-    escolha = int(input(
+    escolha = input(
         "================================================\n"
         "                 INSERT COIN\n"
         "================================================\n"
@@ -23,32 +24,37 @@ def menu_principal():
         "8. Anular última alteração\n"
         "0. Sair\n"
         "================================================\n"
-        "Escolha uma opção: "))
+        "Escolha uma opção: ")
     
     match escolha:
-        case 1:
+        case "1":
             estudios.gerir_estudios()
-        case 2:
+        case "2":
             jogos.gerir_jogos()
-        case 3:
+        case "3":
             dlcs.gerir_dlcs()
-        case 4:
+        case "4":
             pesquisar_catalogo()
-        case 5:
+        case "5":
             relatorio_financeiro()
-        case 6:
+        case "6":
             graficos()
-        case 7:
+        case "7":
             historico_de_acoes()
-        case 8:
+        case "8":
             anular_ultima_alteracao()
-        case 0:
+        case "0":
             os.system('cls' if os.name == 'nt' else 'clear')
             sys.exit()
+        case _:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print(escolha, "Não é uma opção válida!")
+            time.sleep(3)
+            menu_principal()
 
 def menu_gerir_estudios():
     os.system('cls' if os.name == 'nt' else 'clear')
-    escolha = int(input(
+    escolha = input(
         "================================================\n"
         "                 INSERT COIN\n"
         "================================================\n"
@@ -57,18 +63,23 @@ def menu_gerir_estudios():
         "-1. Voltar\n"
         "0. Sair\n"
         "================================================\n"
-        "Escolha uma opção: "))
+        "Escolha uma opção: ")
 
     match escolha:
-        case -1:
+        case "-1":
             menu_principal()
-        case 0:
+        case "0":
             os.system('cls' if os.name == 'nt' else 'clear')
             sys.exit()
+        case _:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print(escolha, "Não é uma opção válida!")
+            time.sleep(3)
+            menu_gerir_estudios()
 
 def menu_gerir_jogos():
     os.system('cls' if os.name == 'nt' else 'clear')
-    escolha = int(input(
+    escolha = input(
         "================================================\n"
         "                 INSERT COIN\n"
         "================================================\n"
@@ -77,18 +88,28 @@ def menu_gerir_jogos():
         "-1. Voltar\n"
         "0. Sair\n"
         "================================================\n"
-        "Escolha uma opção: "))
+        "Escolha uma opção: ")
 
     match escolha:
-        case -1:
+        case "":
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print(escolha, "Não é uma opção válida!")
+            time.sleep(3)
+            menu_gerir_jogos()
+        case "-1":
             menu_principal()
-        case 0:
+        case "0":
             os.system('cls' if os.name == 'nt' else 'clear')
             sys.exit()
+        case _:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print(escolha, "Não é uma opção válida!")
+            time.sleep(3)
+            menu_gerir_jogos()
 
 def menu_gerir_dlcs():
     os.system('cls' if os.name == 'nt' else 'clear')
-    escolha = int(input(
+    escolha = input(
         "================================================\n"
         "                 INSERT COIN\n"
         "================================================\n"
@@ -97,11 +118,16 @@ def menu_gerir_dlcs():
         "-1. Voltar\n"
         "0. Sair\n"
         "================================================\n"
-        "Escolha uma opção: "))
+        "Escolha uma opção: ")
 
     match escolha:
-        case -1:
+        case "-1":
             menu_principal()
-        case 0:
+        case "0":
             os.system('cls' if os.name == 'nt' else 'clear')
             sys.exit()
+        case _:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print(escolha, "Não é uma opção válida!")
+            time.sleep(3)
+            menu_gerir_dlcs()
