@@ -27,12 +27,21 @@ def adicionar_estudio(escolha):
                 json.dump(temp, arquivo, indent=4, ensure_ascii=False)
         
         case "3":
-            comissao  = input("Digite a comissão do estudio: ").strip()
-            comissao_formatada = comissao.removesuffix("%").strip()
-            temp["estudio"]["comissao"] = float(comissao_formatada)
+            while True:
+                comissao = input("Digite a comissão: ").strip()
+                comissao = comissao.removesuffix("%").strip()
 
-            with open("data/temp.json", "w", encoding="utf-8") as arquivo:
-                json.dump(temp, arquivo, indent=4, ensure_ascii=False)
+                try:
+                    comissao = float(comissao)
+
+                    if 0 <= comissao <= 100:
+                        temp["estudio"]["comissao"] = comissao
+                        break
+
+                    print("A comissão deve estar entre 0 e 100!")
+
+                except ValueError:
+                    print("Introduz um número válido!")
 
         case "4":
             estudio = temp["estudio"]
