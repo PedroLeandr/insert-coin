@@ -47,7 +47,7 @@ O enunciado original refere ficheiros `.csv`, mas **o professor autorizou a util
 - [x] Menu navegável na linha de comandos.
 - [ ] Submenus organizados por funcionalidade.
 - [x] Opção de voltar atrás e de sair.
-- [ ] Tratamento de opções inválidas.
+- [x] Tratamento de opções inválidas.
 
 ### RF02 — Consultar estúdios
 

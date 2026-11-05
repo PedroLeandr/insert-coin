@@ -8,7 +8,11 @@ import estudios
 import jogos
 import dlcs
 
+# import de dados "temporarios"
+from dados import ler_temp
+
 def menu_principal():
+    temp = ler_temp()
     os.system('cls' if os.name == 'nt' else 'clear')
     escolha = input(
         "================================================\n"
@@ -52,7 +56,11 @@ def menu_principal():
             time.sleep(3)
             menu_principal()
 
+
+# ESTUDIOS
+
 def menu_gerir_estudios():
+    temp = ler_temp()
     os.system('cls' if os.name == 'nt' else 'clear')
     escolha = input(
         "================================================\n"
@@ -60,12 +68,15 @@ def menu_gerir_estudios():
         "================================================\n"
         "                   ESTUDIOS\n"
         "================================================\n"
+        "1. Adicionar Estudio\n"
         "-1. Voltar\n"
         "0. Sair\n"
         "================================================\n"
         "Escolha uma opção: ")
 
     match escolha:
+        case "1":
+            menu_adicionar_estudio()
         case "-1":
             menu_principal()
         case "0":
@@ -77,7 +88,63 @@ def menu_gerir_estudios():
             time.sleep(3)
             menu_gerir_estudios()
 
+def menu_adicionar_estudio():
+    temp = ler_temp()
+    os.system('cls' if os.name == 'nt' else 'clear')
+    nome = temp["estudio"]["nome"]
+    pais = temp["estudio"]["pais"]
+    comissao = temp["estudio"]["comissao"]
+
+    escolha = input(
+        "================================================\n"
+        "                 INSERT COIN\n"
+        "================================================\n"
+        "              ADICIONAR ESTUDIO\n"
+        "================================================\n"
+        f"1. {f'Alterar Nome | {nome}' if nome else 'Adicionar Nome'}\n"
+        f"2. {f'Alterar País | {pais}' if pais else 'Adicionar País'}\n"
+        f"3. {f'Alterar Comissão | {comissao}%' if comissao else 'Adicionar Comissão'}\n"
+        f"{'4. Adicionar Estúdio' + chr(10) if nome and pais and comissao is not None else ''}"
+        "-1. Voltar\n"
+        "0. Sair\n"
+        "================================================\n"
+        "Escolha uma opção: ")
+
+    match escolha:
+        case "":
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print(escolha, "Não é uma opção válida!")
+            time.sleep(3)
+            menu_adicionar_estudio()
+        case "1":
+            estudios.adicionar_estudio(escolha)
+        case "2":
+            estudios.adicionar_estudio(escolha)
+        case "3":
+            estudios.adicionar_estudio(escolha)
+        case "4":
+            if nome and pais and comissao is not None:
+                return estudios.adicionar_estudio(escolha)
+            else:
+                os.system('cls' if os.name == 'nt' else 'clear')
+                print(escolha, "Não é uma opção válida!")
+                time.sleep(3)
+                menu_adicionar_estudio()
+        case "-1":
+            menu_gerir_estudios()
+        case "0":
+            os.system('cls' if os.name == 'nt' else 'clear')
+            sys.exit()
+        case _:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print(escolha, "Não é uma opção válida!")
+            time.sleep(3)
+            menu_adicionar_estudio()
+
+# JOGOS
+
 def menu_gerir_jogos():
+    temp = ler_temp()
     os.system('cls' if os.name == 'nt' else 'clear')
     escolha = input(
         "================================================\n"
@@ -108,6 +175,7 @@ def menu_gerir_jogos():
             menu_gerir_jogos()
 
 def menu_gerir_dlcs():
+    temp = ler_temp()
     os.system('cls' if os.name == 'nt' else 'clear')
     escolha = input(
         "================================================\n"

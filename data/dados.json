@@ -1,0 +1,18 @@
+{
+    "estudios": [
+        {
+            "id": 1,
+            "nome": "Team Cherry",
+            "pais": "Austrália",
+            "comissao": "25%",
+            "jogos": []
+        },
+        {
+            "id": 2,
+            "nome": "Supergiant Games",
+            "pais": "Estados Unidos",
+            "comissao": 15.0,
+            "jogos": []
+        }
+    ]
+}

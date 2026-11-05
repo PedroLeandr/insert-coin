@@ -1,0 +1,19 @@
+{
+    "estudio": {
+        "nome": null,
+        "pais": null,
+        "comissao": null
+    },
+    "jogo": {
+        "nome": null,
+        "estudio_id": null,
+        "genero": null,
+        "lancamento": null,
+        "preco": null,
+        "copias_vendidas": null
+    },
+    "dlc": {
+        "nome": null,
+        "jogo_id": null
+    }
+}
