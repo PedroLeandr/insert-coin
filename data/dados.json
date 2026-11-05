@@ -4,7 +4,7 @@
             "id": 1,
             "nome": "Team Cherry",
             "pais": "Austrália",
-            "comissao": "25%",
+            "comissao": 25.0,
             "jogos": []
         },
         {
