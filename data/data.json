@@ -1,0 +1,10 @@
+{
+    "studios": [
+        {
+            "id": 1,
+            "name": "N Works",
+            "country": "Nigeria",
+            "commission": 0.0
+        }
+    ]
+}
