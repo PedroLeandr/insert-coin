@@ -2,6 +2,7 @@ import os
 import time
 
 import studios
+from menu_display import print_menu
 
 def main_menu():
     """Apresenta o menu principal e encaminha o utilizador para os submenus."""
@@ -10,14 +11,7 @@ def main_menu():
         # Usa o comando de limpeza adequado ao sistema operativo.
         os.system('cls' if os.name == 'nt' else 'clear')
 
-        print(
-            "============================\n"
-            f"{'Insert Coin':^28}\n"
-            "============================\n"
-            "1. Estudios\n"
-            "0. Sair\n"
-            "============================\n"
-        )
+        print_menu(None, ["1. Estudios", "0. Sair"])
         try:
             choice = int(input("Opção: "))
 

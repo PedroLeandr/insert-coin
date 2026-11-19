@@ -2,9 +2,93 @@
     "studios": [
         {
             "id": 1,
-            "name": "N Works",
-            "country": "Nigeria",
-            "commission": 0.0
+            "name": "Supergiant Games",
+            "country": "Estados Unidos",
+            "commission": 20
+        },
+        {
+            "id": 2,
+            "name": "Team Cherry",
+            "country": "Austrália",
+            "commission": 17.5
+        },
+        {
+            "id": 3,
+            "name": "Motion Twin",
+            "country": "França",
+            "commission": 18
+        },
+        {
+            "id": 4,
+            "name": "Fictiorama Studios",
+            "country": "Espanha",
+            "commission": 22
+        },
+        {
+            "id": 5,
+            "name": "Kiro'o Games",
+            "country": "Camarões",
+            "commission": 15
+        },
+        {
+            "id": 6,
+            "name": "11 bit studios",
+            "country": "Polónia",
+            "commission": 24
+        },
+        {
+            "id": 7,
+            "name": "Amanita Design",
+            "country": "Chéquia",
+            "commission": 19
+        },
+        {
+            "id": 8,
+            "name": "Maschinen-Mensch",
+            "country": "Alemanha",
+            "commission": 21
+        },
+        {
+            "id": 9,
+            "name": "Kitfox Games",
+            "country": "Canadá",
+            "commission": 16.5
+        },
+        {
+            "id": 10,
+            "name": "Toge Productions",
+            "country": "Indonésia",
+            "commission": 18.5
+        },
+        {
+            "id": 11,
+            "name": "Lingon Studios",
+            "country": "Suécia",
+            "commission": 20.5
+        },
+        {
+            "id": 12,
+            "name": "Ground Control Studios",
+            "country": "Portugal",
+            "commission": 15.5
+        },
+        {
+            "id": 13,
+            "name": "Iris Edge Studios",
+            "country": "Portugal",
+            "commission": 14
+        },
+        {
+            "id": 14,
+            "name": "Redcatpig",
+            "country": "Portugal",
+            "commission": 17
+        },
+        {
+            "id": 15,
+            "name": "Synthetic Mind",
+            "country": "Suécia",
+            "commission": 23
         }
     ]
 }
