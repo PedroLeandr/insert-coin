@@ -11,8 +11,8 @@ def menu_studios():
     while True:
         os.system('cls' if os.name == 'nt' else 'clear')
         print_menu(
-            "Estudios",
-            ["1. Adicionar", "2. Listar Estudios", "-1. Voltar", "0. Sair"],
+            "Estúdios",
+            ["1. Adicionar", "2. Listar estúdios", "-1. Voltar", "0. Sair"],
         )
         try: 
             choice = int(input("Opção: "))
@@ -25,7 +25,7 @@ def menu_studios():
                     list_studios()
                 
                 case 0: 
-                    print("Saiste")
+                    print("Saíste do programa.")
                     # Encerra a aplicação, incluindo os menus que chamaram esta função.
                     raise SystemExit
 
@@ -34,12 +34,12 @@ def menu_studios():
                     return
                 
                 case _:
-                    print("404")
+                    print("Opção inválida.")
                     time.sleep(3)
 
         except ValueError:
             os.system('cls' if os.name == 'nt' else 'clear')
-            print("deve inserir um numero!")
+            print("Introduz um número.")
             time.sleep(3)
 
 def add_studio():
@@ -62,21 +62,21 @@ def add_studio():
 
         # Mostra os valores atuais e disponibiliza a confirmação com todos preenchidos.
         options = [
-            f"1. {'Adicionar Nome' if name is None else 'Editar Nome | ' + name}:",
-            f"2. {'Adicionar País' if country is None else 'Editar País | ' + country}:",
-            f"3. {'Adicionar Comissão' if commission is None else f'Editar Comissão | {commission}%'}:",
+            f"1. {'Adicionar nome' if name is None else 'Editar nome | ' + name}:",
+            f"2. {'Adicionar país' if country is None else 'Editar país | ' + country}:",
+            f"3. {'Adicionar comissão' if commission is None else f'Editar comissão | {commission}%'}:",
         ]
         if name is not None and country is not None and commission is not None:
-            options.append("4. Adicionar Estudio")
+            options.append("4. Adicionar estúdio")
         options.extend(["-1. Voltar", "0. Sair"])
-        print_menu("Adicionar Estudio", options)
+        print_menu("Adicionar estúdio", options)
         try: 
             choice = int(input("Opção: "))
 
             match choice:
                 case 1: 
                     # strip() remove espaços nas extremidades. Enter mantém o nome atual.
-                    temp["studio"]["name"] = input("Insira o nome do Estudio (ENTER para manter): ").strip() or name
+                    temp["studio"]["name"] = input("Introduz o nome do estúdio (Enter para manter): ").strip() or name
                     
                     # Guarda o rascunho para permitir retomá-lo depois de sair do formulário.
                     # ensure_ascii=False mantém acentos legíveis e indent=4 formata o JSON.
@@ -85,15 +85,16 @@ def add_studio():
 
                 case 2: 
                     # Aplica ao país o mesmo comportamento de edição do nome.
-                    temp["studio"]["country"] = input("Insira o país do Estudio (ENTER para manter): ").strip() or country
+                    temp["studio"]["country"] = input("Introduz o país do estúdio (Enter para manter): ").strip() or country
 
                     with open("data/temp.json", "w", encoding="utf-8") as file:
                         json.dump(temp, file, ensure_ascii=False, indent=4)
 
                 case 3: 
                     try:
-                        temp_commission = input("Comissão (ENTER para manter): ")
+                        temp_commission = input("Comissão (Enter para manter): ")
 
+                        # Enter mantém a comissão já guardada no rascunho.
                         if temp_commission != "":
 
                             # Aceita entradas como 15%, 15,5 e 15.5.
@@ -107,12 +108,12 @@ def add_studio():
                                     json.dump(temp, file, ensure_ascii=False, indent=4)
 
                             else:
-                                print("A comissao deve estar entre 0 e 100!")
+                                print("A comissão deve estar entre 0 e 100%.")
                                 time.sleep(3)
                     
                     except ValueError:
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("deve inserir um numero!")
+                        print("Introduz um número.")
                         time.sleep(3)
                 
                 case 4:
@@ -149,14 +150,14 @@ def add_studio():
                             json.dump(temp, file, ensure_ascii=False, indent=4)
 
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("Estudio adicionado com sucesso!")
+                        print("Estúdio adicionado com sucesso!")
                         time.sleep(3)
                     else:
-                        print("404")
+                        print("Preenche todos os campos para adicionar o estúdio.")
                         time.sleep(3)
                 
                 case 0: 
-                    print("Saiste")
+                    print("Saíste do programa.")
                     raise SystemExit
 
                 case -1: 
@@ -164,15 +165,16 @@ def add_studio():
                     return
                 
                 case _:
-                    print("404")
+                    print("Opção inválida.")
                     time.sleep(3)
                 
         except ValueError:
             os.system('cls' if os.name == 'nt' else 'clear')
-            print("deve inserir um numero!")
+            print("Introduz um número.")
             time.sleep(3)
 
 def list_studios():
+    # Relê os dados em cada volta para refletir edições e eliminações.
     while True:
         os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -181,25 +183,27 @@ def list_studios():
 
         studios = data["studios"]
 
+        # Usa o cabeçalho como largura mínima, mesmo quando a lista está vazia.
         largura_nome = max([len("Nome")] + [len(studio["name"]) for studio in studios])
 
         header = f"{'ID':>4} | {'Nome':<{largura_nome}} | {'Comissão':>9}"
         table = [header, "-" * len(header)]
 
+        # Alinha as colunas e mostra um hífen nos registos antigos sem ID.
         for studio in studios:
             id_estudio = studio.get("id", "-")
             nome = studio["name"]
             comissao = f"{studio['commission']:g}%"
             table.append(f"{id_estudio:>4} | {nome:<{largura_nome}} | {comissao:>9}")
 
-        print_menu("Listar Estudios", table, ["\"Para editar um Estúdio insira o ID do Estúdio\"", "-1. Voltar", "0. Sair"])
+        print_menu("Listar estúdios", table, ["Para editar um estúdio, introduz o seu ID.", "-1. Voltar", "0. Sair"])
 
         try:
             choice = int(input("Opção: "))
 
             match choice:
                 case 0:
-                    print("Saiste")
+                    print("Saíste do programa.")
                     raise SystemExit
 
                 case -1:
@@ -218,7 +222,7 @@ def list_studios():
 
         except ValueError:
             os.system('cls' if os.name == 'nt' else 'clear')
-            print("deve inserir um numero!")
+            print("Introduz um número.")
             time.sleep(3)
 
 def edit_studio(studio_id):
@@ -237,7 +241,7 @@ def edit_studio(studio_id):
         time.sleep(3)
         return
 
-    # Mantém os valores originais para gravar apenas os campos alterados.
+    # Edita uma cópia em memória para poder descartar as mudanças ao voltar.
     draft = studio.copy()
 
     while True:
@@ -248,37 +252,39 @@ def edit_studio(studio_id):
         # Usa o mesmo formato de percentagem que a tabela de estúdios.
         commission_label = "Por preencher" if commission is None else f"{commission:g}%"
         options = [
-            f"1. Editar Nome | {name or 'Por preencher'}",
-            f"2. Editar País | {country or 'Por preencher'}",
-            f"3. Editar Comissão | {commission_label}",
+            f"1. Editar nome | {name or 'Por preencher'}",
+            f"2. Editar país | {country or 'Por preencher'}",
+            f"3. Editar comissão | {commission_label}",
             "4. Guardar alterações",
+            "5. Eliminar estúdio",
             "-1. Voltar",
             "0. Sair",
         ]
-        print_menu("Editar Estúdio", options)
+        print_menu("Editar estúdio", options)
 
         try:
             choice = int(input("Opção: "))
         except ValueError:
-            print("Deve inserir um número!")
+            print("Introduz um número.")
             time.sleep(3)
             continue
 
         match choice:
             case 1:
                 # strip() remove espaços nas extremidades. Enter mantém o valor atual.
-                draft["name"] = input("Nome (ENTER para manter): ").strip() or name
+                draft["name"] = input("Nome (Enter para manter): ").strip() or name
             case 2:
-                draft["country"] = input("País (ENTER para manter): ").strip() or country
+                draft["country"] = input("País (Enter para manter): ").strip() or country
             case 3:
-                value = input("Comissão (ENTER para manter): ").strip()
+                value = input("Comissão (Enter para manter): ").strip()
+                # Uma entrada vazia mantém a comissão atual e volta ao menu.
                 if not value:
                     continue
                 try:
                     # Aceita entradas como 15%, 15,5 e 15.5.
                     rate = float(value.removesuffix("%").replace(",", "."))
                 except ValueError:
-                    print("Deve inserir um número!")
+                    print("Introduz um número.")
                     time.sleep(3)
                     continue
 
@@ -286,7 +292,7 @@ def edit_studio(studio_id):
                 if 0 <= rate <= 100:
                     draft["commission"] = rate
                 else:
-                    print("A comissão deve estar entre 0 e 100!")
+                    print("A comissão deve estar entre 0 e 100%.")
                     time.sleep(3)
             case 4:
                 try:
@@ -319,12 +325,83 @@ def edit_studio(studio_id):
                 print("Alterações guardadas com sucesso!")
                 time.sleep(3)
                 return
+
+            case 5:
+                # Se a eliminação for concluída, volta à lista para atualizar a listagem.
+                if delete_studio(studio_id):
+                    return
             case -1:
                 # Volta à lista e descarta as alterações pendentes.
                 return
             case 0:
-                print("Saíste")
+                print("Saíste do programa.")
                 raise SystemExit
             case _:
                 print("Opção inválida.")
                 time.sleep(3)
+
+def delete_studio(studio_id):
+    """Elimina o estúdio selecionado após confirmação pelo nome."""
+    data_path = Path("data/data.json")
+    with data_path.open(encoding="utf-8") as file:
+        data = json.load(file)
+
+    # Usa o nome guardado para confirmar a eliminação do estúdio selecionado pelo ID.
+    studio = next(
+        (studio for studio in data["studios"] if studio.get("id") == studio_id),
+        None,
+    )
+    if studio is None:
+        print("Estúdio não encontrado.")
+        time.sleep(3)
+        return
+
+    while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        options = [
+            "Introduz o nome do estúdio para confirmar a eliminação.",
+            "-1. Voltar",
+            "0. Sair"
+        ]
+        print_menu(f'Eliminar estúdio "{studio["name"]}"', options)
+
+        # Lê a resposta como texto porque pode ser um comando ou o nome do estúdio.
+        res = input("Opção: ").strip()
+
+        if res == "-1":
+            return
+        if res == "0":
+            print("Saíste do programa.")
+            raise SystemExit
+        if res == studio["name"]:
+            try:
+                # Relê o ficheiro para preservar alterações aos outros estúdios.
+                with data_path.open("r", encoding="utf-8") as file:
+                    data = json.load(file)
+
+                current_studio = next(
+                    (entry for entry in data["studios"] if entry.get("id") == studio_id),
+                    None,
+                )
+                # A confirmação só vale se o registo ainda existir com o mesmo nome.
+                if current_studio is None or current_studio["name"] != res:
+                    print("O estúdio foi alterado ou já não existe.")
+                    time.sleep(3)
+                    return
+
+                # Remove apenas o registo encontrado e guarda a coleção atualizada.
+                data["studios"].remove(current_studio)
+                with data_path.open("w", encoding="utf-8") as file:
+                    json.dump(data, file, ensure_ascii=False, indent=4)
+            except (OSError, ValueError) as error:
+                print(f"Não foi possível eliminar o estúdio: {error}")
+                time.sleep(3)
+                # Mantém o menu aberto para permitir nova tentativa ou cancelamento.
+                continue
+
+            print("Estúdio eliminado com sucesso!")
+            time.sleep(3)
+            return True
+
+        print("Opção inválida ou nome do estúdio incorreto.")
+        time.sleep(3)

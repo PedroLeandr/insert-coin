@@ -4,6 +4,7 @@ def print_menu(title, *sections):
     if title:
         headings.append(title)
 
+    # Reserva dez caracteres além da linha mais comprida, incluindo os títulos.
     width = max(
         len(line)
         for section in (headings, *sections)
@@ -16,6 +17,7 @@ def print_menu(title, *sections):
         print(heading.center(width))
         print(separator)
 
+    # Cada grupo de linhas termina com o mesmo separador.
     for section in sections:
         print(*section, sep="\n")
         print(separator)

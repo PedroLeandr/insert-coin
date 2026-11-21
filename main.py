@@ -11,7 +11,7 @@ def main_menu():
         # Usa o comando de limpeza adequado ao sistema operativo.
         os.system('cls' if os.name == 'nt' else 'clear')
 
-        print_menu(None, ["1. Estudios", "0. Sair"])
+        print_menu(None, ["1. Estúdios", "0. Sair"])
         try:
             choice = int(input("Opção: "))
 
@@ -21,18 +21,18 @@ def main_menu():
                     studios.menu_studios()
 
                 case 0:
-                    print("Saiste")
+                    print("Saíste do programa.")
                     # Termina a função e, neste ponto de entrada, o programa.
                     return
 
                 case _:
-                    print("404")
+                    print("Opção inválida.")
                     time.sleep(3)
 
         except ValueError:
             # int() rejeita entradas como letras ou uma resposta vazia.
             os.system('cls' if os.name == 'nt' else 'clear')
-            print("deve inserir um numero!")
+            print("Introduz um número.")
             time.sleep(3)
             
 
