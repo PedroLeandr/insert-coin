@@ -4,91 +4,585 @@
             "id": 1,
             "name": "Supergiant Games",
             "country": "Estados Unidos",
-            "commission": 20
+            "commission": 20,
+            "games": [
+                {
+                    "id": 1,
+                    "name": "Bastion",
+                    "genre": "RPG de ação",
+                    "release_date": "2011-08-16",
+                    "copies_sold": 3000000,
+                    "price": 14.99
+                },
+                {
+                    "id": 2,
+                    "name": "Transistor",
+                    "genre": "RPG de ação",
+                    "release_date": "2014-05-20",
+                    "copies_sold": 1000000,
+                    "price": 19.99
+                },
+                {
+                    "id": 3,
+                    "name": "Pyre",
+                    "genre": "RPG de ação",
+                    "release_date": "2017-07-25",
+                    "copies_sold": null,
+                    "price": 19.99
+                },
+                {
+                    "id": 4,
+                    "name": "Hades",
+                    "genre": "Roguelike de ação",
+                    "release_date": "2020-09-17",
+                    "copies_sold": 1000000,
+                    "price": 24.99
+                },
+                {
+                    "id": 5,
+                    "name": "Hades II",
+                    "genre": "Roguelike de ação",
+                    "release_date": "2025-09-25",
+                    "copies_sold": null,
+                    "price": 29.99
+                }
+            ]
         },
         {
             "id": 2,
             "name": "Team Cherry",
             "country": "Austrália",
-            "commission": 17.5
+            "commission": 17.5,
+            "games": [
+                {
+                    "id": 6,
+                    "name": "Hollow Knight",
+                    "genre": "Metroidvania",
+                    "release_date": "2017-02-24",
+                    "copies_sold": 15000000,
+                    "price": 14.99
+                },
+                {
+                    "id": 7,
+                    "name": "Hollow Knight: Silksong",
+                    "genre": "Metroidvania",
+                    "release_date": "2025-09-04",
+                    "copies_sold": 7000000,
+                    "price": 19.99
+                }
+            ]
         },
         {
             "id": 3,
             "name": "Motion Twin",
             "country": "França",
-            "commission": 18
+            "commission": 18,
+            "games": [
+                {
+                    "id": 8,
+                    "name": "Dead Cells",
+                    "genre": "Roguelite de ação",
+                    "release_date": "2018-08-06",
+                    "copies_sold": 10000000,
+                    "price": 24.99
+                },
+                {
+                    "id": 9,
+                    "name": "Windblown",
+                    "genre": "Roguelite de ação",
+                    "release_date": "2024-10-24",
+                    "copies_sold": null,
+                    "price": 24.99
+                }
+            ]
         },
         {
             "id": 4,
             "name": "Fictiorama Studios",
             "country": "Espanha",
-            "commission": 22
+            "commission": 22,
+            "games": [
+                {
+                    "id": 10,
+                    "name": "Dead Synchronicity: Tomorrow Comes Today",
+                    "genre": "Aventura gráfica",
+                    "release_date": "2015-04-10",
+                    "copies_sold": null,
+                    "price": 9.99
+                },
+                {
+                    "id": 11,
+                    "name": "Do Not Feed the Monkeys",
+                    "genre": "Simulação e aventura",
+                    "release_date": "2018-10-23",
+                    "copies_sold": null,
+                    "price": 15.99
+                },
+                {
+                    "id": 12,
+                    "name": "Do Not Feed the Monkeys 2099",
+                    "genre": "Simulação e aventura",
+                    "release_date": "2023-05-25",
+                    "copies_sold": null,
+                    "price": 14.99
+                },
+                {
+                    "id": 13,
+                    "name": "The Fabulous Fear Machine",
+                    "genre": "Estratégia e terror",
+                    "release_date": "2023-10-04",
+                    "copies_sold": null,
+                    "price": 17.99
+                }
+            ]
         },
         {
             "id": 5,
             "name": "Kiro'o Games",
             "country": "Camarões",
-            "commission": 15
+            "commission": 15,
+            "games": [
+                {
+                    "id": 14,
+                    "name": "Aurion: Legacy of the Kori-Odan",
+                    "genre": "RPG de ação",
+                    "release_date": "2016-04-14",
+                    "copies_sold": null,
+                    "price": 14.99
+                }
+            ]
         },
         {
             "id": 6,
             "name": "11 bit studios",
             "country": "Polónia",
-            "commission": 24
+            "commission": 24,
+            "games": [
+                {
+                    "id": 15,
+                    "name": "Anomaly: Warzone Earth",
+                    "genre": "Estratégia e tower offense",
+                    "release_date": "2011-04-08",
+                    "copies_sold": null,
+                    "price": 9.99
+                },
+                {
+                    "id": 16,
+                    "name": "Anomaly 2",
+                    "genre": "Estratégia e tower offense",
+                    "release_date": "2013-05-15",
+                    "copies_sold": null,
+                    "price": 14.99
+                },
+                {
+                    "id": 17,
+                    "name": "Anomaly Korea",
+                    "genre": "Estratégia e tower offense",
+                    "release_date": "2013-11-06",
+                    "copies_sold": null,
+                    "price": 4.99
+                },
+                {
+                    "id": 18,
+                    "name": "Anomaly Defenders",
+                    "genre": "Estratégia e tower defense",
+                    "release_date": "2014-05-29",
+                    "copies_sold": null,
+                    "price": 9.99
+                },
+                {
+                    "id": 19,
+                    "name": "This War of Mine",
+                    "genre": "Sobrevivência e estratégia",
+                    "release_date": "2014-11-14",
+                    "copies_sold": null,
+                    "price": 19.99
+                },
+                {
+                    "id": 20,
+                    "name": "Frostpunk",
+                    "genre": "Estratégia e sobrevivência",
+                    "release_date": "2018-04-24",
+                    "copies_sold": 5000000,
+                    "price": 29.99
+                },
+                {
+                    "id": 21,
+                    "name": "Frostpunk 2",
+                    "genre": "Estratégia e sobrevivência",
+                    "release_date": "2024-09-20",
+                    "copies_sold": 592000,
+                    "price": 44.99
+                },
+                {
+                    "id": 22,
+                    "name": "The Alters",
+                    "genre": "Sobrevivência e aventura",
+                    "release_date": "2025-06-13",
+                    "copies_sold": null,
+                    "price": 34.99
+                }
+            ]
         },
         {
             "id": 7,
             "name": "Amanita Design",
             "country": "Chéquia",
-            "commission": 19
+            "commission": 19,
+            "games": [
+                {
+                    "id": 23,
+                    "name": "Machinarium",
+                    "genre": "Aventura e puzzles",
+                    "release_date": "2009-10-16",
+                    "copies_sold": 4000000,
+                    "price": 19.99
+                },
+                {
+                    "id": 24,
+                    "name": "Samorost 2",
+                    "genre": "Aventura e puzzles",
+                    "release_date": "2009-12-10",
+                    "copies_sold": null,
+                    "price": 4.99
+                },
+                {
+                    "id": 25,
+                    "name": "Botanicula",
+                    "genre": "Aventura e puzzles",
+                    "release_date": "2012-05-07",
+                    "copies_sold": null,
+                    "price": 14.99
+                },
+                {
+                    "id": 26,
+                    "name": "Samorost 3",
+                    "genre": "Aventura e puzzles",
+                    "release_date": "2016-03-24",
+                    "copies_sold": null,
+                    "price": 19.99
+                },
+                {
+                    "id": 27,
+                    "name": "CHUCHEL",
+                    "genre": "Aventura e puzzles",
+                    "release_date": "2018-03-07",
+                    "copies_sold": null,
+                    "price": 14.99
+                },
+                {
+                    "id": 28,
+                    "name": "Pilgrims",
+                    "genre": "Aventura e puzzles",
+                    "release_date": "2019-10-07",
+                    "copies_sold": null,
+                    "price": 6.99
+                },
+                {
+                    "id": 29,
+                    "name": "Creaks",
+                    "genre": "Aventura e puzzles",
+                    "release_date": "2020-07-22",
+                    "copies_sold": null,
+                    "price": 19.99
+                },
+                {
+                    "id": 30,
+                    "name": "Happy Game",
+                    "genre": "Aventura e terror",
+                    "release_date": "2021-10-28",
+                    "copies_sold": null,
+                    "price": 14.99
+                },
+                {
+                    "id": 31,
+                    "name": "Samorost 1",
+                    "genre": "Aventura e puzzles",
+                    "release_date": "2021-05-20",
+                    "copies_sold": null,
+                    "price": 0.0
+                },
+                {
+                    "id": 32,
+                    "name": "Phonopolis",
+                    "genre": "Aventura e puzzles",
+                    "release_date": "2026-05-20",
+                    "copies_sold": null,
+                    "price": 24.99
+                }
+            ]
         },
         {
             "id": 8,
             "name": "Maschinen-Mensch",
             "country": "Alemanha",
-            "commission": 21
+            "commission": 21,
+            "games": [
+                {
+                    "id": 33,
+                    "name": "Curious Expedition",
+                    "genre": "Roguelike de exploração",
+                    "release_date": "2016-09-02",
+                    "copies_sold": 300000,
+                    "price": 14.99
+                },
+                {
+                    "id": 34,
+                    "name": "Curious Expedition 2",
+                    "genre": "Roguelike de exploração",
+                    "release_date": "2021-01-28",
+                    "copies_sold": null,
+                    "price": 19.99
+                },
+                {
+                    "id": 35,
+                    "name": "Mother Machine",
+                    "genre": "Plataformas cooperativas",
+                    "release_date": "2025-03-26",
+                    "copies_sold": null,
+                    "price": 14.99
+                }
+            ]
         },
         {
             "id": 9,
             "name": "Kitfox Games",
             "country": "Canadá",
-            "commission": 16.5
+            "commission": 16.5,
+            "games": [
+                {
+                    "id": 36,
+                    "name": "Shattered Planet",
+                    "genre": "Roguelike de exploração",
+                    "release_date": "2014-07-03",
+                    "copies_sold": null,
+                    "price": 14.99
+                },
+                {
+                    "id": 37,
+                    "name": "Moon Hunters",
+                    "genre": "RPG de ação",
+                    "release_date": "2016-03-10",
+                    "copies_sold": null,
+                    "price": 14.99
+                },
+                {
+                    "id": 38,
+                    "name": "The Shrouded Isle",
+                    "genre": "Gestão e estratégia",
+                    "release_date": "2017-08-04",
+                    "copies_sold": null,
+                    "price": 12.99
+                },
+                {
+                    "id": 39,
+                    "name": "Fit For a King",
+                    "genre": "Aventura e simulação",
+                    "release_date": "2019-09-05",
+                    "copies_sold": null,
+                    "price": 9.99
+                },
+                {
+                    "id": 40,
+                    "name": "Lucifer Within Us",
+                    "genre": "Mistério e investigação",
+                    "release_date": "2020-10-15",
+                    "copies_sold": null,
+                    "price": 19.99
+                },
+                {
+                    "id": 41,
+                    "name": "Boyfriend Dungeon",
+                    "genre": "RPG de ação e simulação",
+                    "release_date": "2021-08-11",
+                    "copies_sold": null,
+                    "price": 19.99
+                }
+            ]
         },
         {
             "id": 10,
             "name": "Toge Productions",
             "country": "Indonésia",
-            "commission": 18.5
+            "commission": 18.5,
+            "games": [
+                {
+                    "id": 42,
+                    "name": "Infectonator: Survivors",
+                    "genre": "Sobrevivência e estratégia",
+                    "release_date": "2016-08-08",
+                    "copies_sold": null,
+                    "price": 9.99
+                },
+                {
+                    "id": 43,
+                    "name": "Infectonator 3: Apocalypse",
+                    "genre": "Estratégia e simulação",
+                    "release_date": "2018-05-10",
+                    "copies_sold": null,
+                    "price": 12.99
+                },
+                {
+                    "id": 44,
+                    "name": "Coffee Talk",
+                    "genre": "Visual novel e simulação",
+                    "release_date": "2020-01-29",
+                    "copies_sold": null,
+                    "price": 12.99
+                },
+                {
+                    "id": 45,
+                    "name": "Necronator: Dead Wrong",
+                    "genre": "Estratégia e cartas",
+                    "release_date": "2020-07-30",
+                    "copies_sold": null,
+                    "price": 12.99
+                },
+                {
+                    "id": 46,
+                    "name": "My Lovely Wife",
+                    "genre": "Simulação e aventura",
+                    "release_date": "2022-06-08",
+                    "copies_sold": null,
+                    "price": 14.99
+                },
+                {
+                    "id": 47,
+                    "name": "Coffee Talk Episode 2: Hibiscus & Butterfly",
+                    "genre": "Visual novel e simulação",
+                    "release_date": "2023-04-20",
+                    "copies_sold": null,
+                    "price": 14.99
+                },
+                {
+                    "id": 48,
+                    "name": "Whisper Mountain Outbreak",
+                    "genre": "Sobrevivência e terror",
+                    "release_date": "2025-08-11",
+                    "copies_sold": null,
+                    "price": 7.99
+                },
+                {
+                    "id": 49,
+                    "name": "Coffee Talk Tokyo",
+                    "genre": "Visual novel e simulação",
+                    "release_date": "2026-05-21",
+                    "copies_sold": null,
+                    "price": 14.99
+                }
+            ]
         },
         {
             "id": 11,
             "name": "Lingon Studios",
             "country": "Suécia",
-            "commission": 20.5
+            "commission": 20.5,
+            "games": [
+                {
+                    "id": 50,
+                    "name": "Dextram",
+                    "genre": "Arcade de ação",
+                    "release_date": "2021-11-08",
+                    "copies_sold": null,
+                    "price": 5.99
+                },
+                {
+                    "id": 51,
+                    "name": "Sidestep Legends",
+                    "genre": "Roguelite de ação",
+                    "release_date": "2023-04-13",
+                    "copies_sold": null,
+                    "price": 4.99
+                },
+                {
+                    "id": 52,
+                    "name": "Moose Miners",
+                    "genre": "Simulação de mineração",
+                    "release_date": "2024-05-10",
+                    "copies_sold": null,
+                    "price": 9.99
+                },
+                {
+                    "id": 53,
+                    "name": "Moose Diver",
+                    "genre": "Simulação e aventura",
+                    "release_date": "2025-11-10",
+                    "copies_sold": null,
+                    "price": 4.99
+                }
+            ]
         },
         {
             "id": 12,
             "name": "Ground Control Studios",
             "country": "Portugal",
-            "commission": 15.5
+            "commission": 15.5,
+            "games": [
+                {
+                    "id": 54,
+                    "name": "ZHED - Puzzle Game",
+                    "genre": "Puzzles e estratégia",
+                    "release_date": "2020-04-16",
+                    "copies_sold": null,
+                    "price": 5.99
+                },
+                {
+                    "id": 55,
+                    "name": "Hyper Gods",
+                    "genre": "Shoot em up de ação",
+                    "release_date": "2024-01-22",
+                    "copies_sold": null,
+                    "price": 6.99
+                }
+            ]
         },
         {
             "id": 13,
             "name": "Iris Edge Studios",
             "country": "Portugal",
-            "commission": 14
+            "commission": 14,
+            "games": [
+                {
+                    "id": 56,
+                    "name": "Pinteza",
+                    "genre": "Puzzle de palavras",
+                    "release_date": "2026-09-25",
+                    "copies_sold": null,
+                    "price": 0.0
+                }
+            ]
         },
         {
             "id": 14,
             "name": "Redcatpig",
             "country": "Portugal",
-            "commission": 17
+            "commission": 17,
+            "games": [
+                {
+                    "id": 57,
+                    "name": "KEO",
+                    "genre": "Combate de veículos",
+                    "release_date": "2021-12-09",
+                    "copies_sold": null,
+                    "price": 9.99
+                }
+            ]
         },
         {
             "id": 15,
             "name": "Synthetic Mind",
             "country": "Suécia",
-            "commission": 23
+            "commission": 23,
+            "games": [
+                {
+                    "id": 58,
+                    "name": "Carpet Bombing",
+                    "genre": "Arcade de ação",
+                    "release_date": "2020-01-09",
+                    "copies_sold": null,
+                    "price": 9.99
+                }
+            ]
         }
     ]
 }
