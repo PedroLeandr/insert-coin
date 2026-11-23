@@ -3,6 +3,7 @@ import time
 import json
 from pathlib import Path
 
+from history import registar_acao
 from menu_display import choose_menu
 
 def menu_studios():
@@ -125,6 +126,9 @@ def add_studio():
                     # Assim, limpar o rascunho depois não altera o estúdio adicionado.
                     new_studio = {"id": new_id}
                     new_studio.update(temp["studio"])
+
+                    # Guarda o estado atual no histórico antes de adicionar o estúdio.
+                    registar_acao(f"Adicionar estúdio: {new_studio['name']}", data)
 
                     data["studios"].append(new_studio)
 
@@ -292,6 +296,9 @@ def edit_studio(studio_id):
                         time.sleep(3)
                         return
 
+                    # Guarda o estado atual no histórico antes de editar o estúdio.
+                    registar_acao(f"Editar estúdio: {current_studio['name']}", data)
+
                     # Aplica ao estúdio encontrado os campos que mudaram no rascunho.
                     for field in ("name", "country", "commission"):
                         if draft[field] != studio[field]:
@@ -367,6 +374,9 @@ def delete_studio(studio_id):
                     print("O estúdio foi alterado ou já não existe.")
                     time.sleep(3)
                     return
+
+                # Guarda o estado atual no histórico antes de eliminar o estúdio.
+                registar_acao(f"Eliminar estúdio: {current_studio['name']}", data)
 
                 # Remove apenas o registo encontrado e guarda a coleção atualizada.
                 data["studios"].remove(current_studio)
